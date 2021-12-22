@@ -23,6 +23,7 @@
 %% Solutions
 % First we distribute noise over the image.
 I = imread('lena_image.png');
+I = rgb2gray(I);    % Convert to a grayscale image 
 subplot(3,2,1),imshow(I);
 title('Original Image');
 
@@ -36,9 +37,19 @@ title('Salt and Pepper Noise');
 In = imnoise(Isp, 'gaussian');
 subplot(3,2,3),imshow(In);
 title('Gaussian and Salt & Pepper Noise');
+Inew = In; % Inew will be the image where pixels are modified
 %%
 % Then we apply the algorithm to filter the image
 [m,n] = size(In);
-
+N=2;
+for i=N+1:m-N-1
+    for j=N+1:n-N-1
+        % Omega is the set containing the pixels in the (N+1)x(N+1) window
+%         Omega=[In(i-1,j-1), In(i-1,j), In(i-1,j+1), In(i,j-1), In(i,j),...
+%             In(i,j+1), In(i+1,j-1), In(i+1,j), In(i+1,j+1)];
+        [Omega0,Omega1,Omega2,Omega3,Omega4]= getWindowPoints(In,i,j,N);
+    end
+end
+print('done');
 %%
 
