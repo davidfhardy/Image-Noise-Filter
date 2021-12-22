@@ -17,12 +17,13 @@
 % however, it would be ideal to have a universal filter that can detect and
 % remove both Gaussian and impulse noise.
 %% Proposed Solution
-% Talk here
+% The proposed solution is to define a switching bilateral filter (SBF)
+% which can detect both Gaussian and impulse noise and filter accordingly. 
 %% Data Sources
 % Write shit here
 %% Solutions
 % First we distribute noise over the image.
-I = imread('lena_image.png');
+I = im2double(imread('lena_image.png'));
 I = rgb2gray(I);    % Convert to a grayscale image 
 subplot(3,2,1),imshow(I);
 title('Original Image');
@@ -34,7 +35,8 @@ subplot(3,2,2),imshow(Isp);
 title('Salt and Pepper Noise');
 
 % Add Gaussian Noise
-In = imnoise(Isp, 'gaussian');
+%In = imnoise(Isp, 'gaussian');
+In=imnoise(I,'gaussian');
 subplot(3,2,3),imshow(In);
 title('Gaussian and Salt & Pepper Noise');
 Inew = In; % Inew will be the image where pixels are modified
@@ -43,9 +45,9 @@ Inew = In; % Inew will be the image where pixels are modified
 % Constants
 [m,n] = size(In);
 N=2;
-p = 33;     % any value in the range [25,40] is good (according to research paper)
-Tk1 = 25;   % Tk1 and Tk2 are values provided in the research paper
-Tk2 = 5;
+p = 35;     % any value in the range [25,40] is good (according to research paper)
+Tk1 = 30;   % Tk1 and Tk2 are values provided in the research paper
+Tk2 = 15;
 Ic = 0;     % SBF constant --> do not confuse with image variables
 for i=N+1:m-N-1
     for j=N+1:n-N-1
@@ -67,11 +69,15 @@ for i=N+1:m-N-1
             Ic=In(i,j);
             u = SBF(In,i,j,N,Ic);
         end
+        if u == 1
+            disp([i,j]);
+        end
         Inew(i,j) = u;
     end
 end
 figure;
-imshow(Inew);
+subplot(1,1,1),imshow(Inew);
+title('New Image');
 figure;
 imshow(In);
 disp('done');

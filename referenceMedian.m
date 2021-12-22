@@ -9,7 +9,8 @@ else
     % Strong edge case
     % For now, assume the following since the research paper does not
     % specify the directional averages very well 
-    SQMR = (SQMV(2) + SQMV(3))/2;
+    % SQMR = (SQMV(2) + SQMV(3))/2;
+    SQMR = (SQMV(1)+SQMV(2)+SQMV(3)+SQMV(4))/4;
 end
     
 end

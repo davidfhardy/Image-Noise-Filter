@@ -8,10 +8,6 @@ function [S1,S2] = noiseDetector(x,SQMR,Tk1,Tk2)
 % S1=1, S2=0 implies Gaussian noise
 % S1=0, S2=0 implies noise free
 
-% Assume noise-free for now
-S1 = 0;
-S2 = 0;
-
 if abs(x-SQMR) >= Tk1
     % Impulse noise
     S1 = 1;
@@ -20,6 +16,10 @@ elseif abs(x-SQMR) >= Tk2
     % Gaussian noise
     S1 = 1;
     S2 = 0; 
+else 
+    % Noise free
+    S1 = 0;
+    S2 = 0;
 end
 
 end
