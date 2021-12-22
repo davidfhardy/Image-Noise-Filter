@@ -23,7 +23,7 @@
 % Write shit here
 %% Solutions
 % First we distribute noise over the image.
-I = im2double(imread('lena_image.png'));
+I = imread('lena_image.png');
 I = rgb2gray(I);    % Convert to a grayscale image 
 subplot(3,2,1),imshow(I);
 title('Original Image');
@@ -53,10 +53,19 @@ for i=N+1:m-N-1
     for j=N+1:n-N-1
         % Omega0 is the set containing the pixels in the (2N+1)x(2N+1) window
         % OmegaK, K=1,2,3,4 are sets containing pixels in 4 sub windows
-        [Omega0,Omega1,Omega2,Omega3,Omega4]= getWindowPoints(In,i,j,N);
+        [Omega0,Omega1,Omega2,Omega3,Omega4]= getWindowPoints(In,i,j,N);   
         [SQMV,SQMD_B,SQMD_C] = medianVector(Omega1,Omega2,Omega3,Omega4);
         SQMR = referenceMedian(SQMV,SQMD_B,SQMD_C,p);
         [S1,S2] = noiseDetector(In(i,j),SQMR,Tk1,Tk2); 
+        
+        if i==3 && j==3
+            disp(Omega0);
+            disp(Omega1);
+            disp(Omega2);
+            disp(Omega3);
+            disp(Omega4);
+            disp([SQMV SQMD_B, SQMD_C, SQMR]);
+        end
         
         % Decide if we should filter the pixel or not
         u = In(i,j);
@@ -68,9 +77,6 @@ for i=N+1:m-N-1
             % Gaussian noise
             Ic=In(i,j);
             u = SBF(In,i,j,N,Ic);
-        end
-        if u == 1
-            disp([i,j]);
         end
         Inew(i,j) = u;
     end
