@@ -1,0 +1,160 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ECE 313 Final Project</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-12-21"><meta name="DC.source" content="ECE313_FinalProject_fachambe_dfhardy.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>ECE 313 Final Project</h1><!--introduction--><p><b>TOPIC:</b> Image Processing</p><p><b>Group Members:</b> David Hardy, Francis Chambers</p><p><b>PAPER:</b> Switching Bilateral Filter With a Texture/Noise Detector for Universal Noise Removal</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Problem Formulation</a></li><li><a href="#2">Proposed Solution</a></li><li><a href="#3">Data Sources</a></li><li><a href="#4">Solutions</a></li></ul></div><h2 id="1">Problem Formulation</h2><p>A key probelm in image processing is removing noise while keeping the other characteristics of the image intact. Image noise is the distorted exposure and colour information that a pixel may contain. An image's noise can be represented Gaussian noise and impulse noise. Gaussian noise is the noise distributed over an image's pixel under a normal distribution. Impulse noise is noise which is added to some portion of the image's pizels and is usually caused by transmission errors. There have been many filters designed to detect and correct impulse noise, however, it would be ideal to have a universal filter that can detect and remove both Gaussian and impulse noise.</p><h2 id="2">Proposed Solution</h2><p>Talk here</p><h2 id="3">Data Sources</h2><p>Write shit here</p><h2 id="4">Solutions</h2><p>First we distribute noise over the image.</p><pre class="codeinput">I = imread(<span class="string">'lena_image.png'</span>);
+I = rgb2gray(I);    <span class="comment">% Convert to a grayscale image</span>
+subplot(3,2,1),imshow(I);
+title(<span class="string">'Original Image'</span>);
+
+<span class="comment">% Add Salt and Pepper Noise (Impulse noise)</span>
+sp_noise = 0.01;
+Isp = imnoise(I, <span class="string">'salt &amp; pepper'</span>, sp_noise);
+subplot(3,2,2),imshow(Isp);
+title(<span class="string">'Salt and Pepper Noise'</span>);
+
+<span class="comment">% Add Gaussian Noise</span>
+In = imnoise(Isp, <span class="string">'gaussian'</span>);
+subplot(3,2,3),imshow(In);
+title(<span class="string">'Gaussian and Salt &amp; Pepper Noise'</span>);
+Inew = In; <span class="comment">% Inew will be the image where pixels are modified</span>
+</pre><img vspace="5" hspace="5" src="ECE313_FinalProject_fachambe_dfhardy_01.png" alt=""> <p>Then we apply the algorithm to filter the image Constants</p><pre class="codeinput">[m,n] = size(In);
+N=2;
+p = 33; <span class="comment">% any value in the range [25,40] is good (according to researchers)</span>
+<span class="keyword">for</span> i=N+1:m-N-1
+    <span class="keyword">for</span> j=N+1:n-N-1
+        <span class="comment">% Omega is the set containing the pixels in the (N+1)x(N+1) window</span>
+<span class="comment">%         Omega=[In(i-1,j-1), In(i-1,j), In(i-1,j+1), In(i,j-1), In(i,j),...</span>
+<span class="comment">%             In(i,j+1), In(i+1,j-1), In(i+1,j), In(i+1,j+1)];</span>
+        [Omega0,Omega1,Omega2,Omega3,Omega4]= getWindowPoints(In,i,j,N);
+        [SQMV,SQMD_B,SQMD_C] = medianVector(Omega1,Omega2,Omega3,Omega4);
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+print(<span class="string">'done'</span>);
+</pre><img vspace="5" hspace="5" src="ECE313_FinalProject_fachambe_dfhardy_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ECE 313 Final Project
+% *TOPIC:* Image Processing
+%
+% *Group Members:* David Hardy, Francis Chambers
+%
+% *PAPER:* Switching Bilateral Filter With a Texture/Noise Detector for
+% Universal Noise Removal
+%% Problem Formulation
+% A key probelm in image processing is removing noise while keeping the
+% other characteristics of the image intact. Image noise is the distorted
+% exposure and colour information that a pixel may contain. An image's
+% noise can be represented Gaussian noise and impulse noise. Gaussian noise
+% is the noise distributed over an image's pixel under a normal
+% distribution. Impulse noise is noise which is added to some portion of
+% the image's pizels and is usually caused by transmission errors. There
+% have been many filters designed to detect and correct impulse noise,
+% however, it would be ideal to have a universal filter that can detect and
+% remove both Gaussian and impulse noise.
+%% Proposed Solution
+% Talk here
+%% Data Sources
+% Write shit here
+%% Solutions
+% First we distribute noise over the image.
+I = imread('lena_image.png');
+I = rgb2gray(I);    % Convert to a grayscale image 
+subplot(3,2,1),imshow(I);
+title('Original Image');
+
+% Add Salt and Pepper Noise (Impulse noise)
+sp_noise = 0.01;
+Isp = imnoise(I, 'salt & pepper', sp_noise);
+subplot(3,2,2),imshow(Isp);
+title('Salt and Pepper Noise');
+
+% Add Gaussian Noise
+In = imnoise(Isp, 'gaussian');
+subplot(3,2,3),imshow(In);
+title('Gaussian and Salt & Pepper Noise');
+Inew = In; % Inew will be the image where pixels are modified
+%%
+% Then we apply the algorithm to filter the image
+% Constants
+[m,n] = size(In);
+N=2;
+p = 33; % any value in the range [25,40] is good (according to researchers)
+for i=N+1:m-N-1
+    for j=N+1:n-N-1
+        % Omega is the set containing the pixels in the (N+1)x(N+1) window
+%         Omega=[In(i-1,j-1), In(i-1,j), In(i-1,j+1), In(i,j-1), In(i,j),...
+%             In(i,j+1), In(i+1,j-1), In(i+1,j), In(i+1,j+1)];
+        [Omega0,Omega1,Omega2,Omega3,Omega4]= getWindowPoints(In,i,j,N);
+        [SQMV,SQMD_B,SQMD_C] = medianVector(Omega1,Omega2,Omega3,Omega4);
+    end
+end
+print('done');
+%%
+
+
+##### SOURCE END #####
+--></body></html>

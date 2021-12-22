@@ -57,23 +57,9 @@ for i=N+1:m-N-1
         [S1,S2] = noiseDetector(In(i,j),SQMR,Tk1,Tk2); 
         
         % Decide if we should filter the pixel or not
-        u = In(i,j);
-        if S1==1 && S2==1
-            % Impulse
-            Ic=SQMR;
-            u = SBF(In,i,j,N,Ic);
-        elseif S1==1 && S2==0
-            % Gaussian noise
-            Ic=In(i,j);
-            u = SBF(In,i,j,N,Ic);
-        end
-        Inew(i,j) = u;
+        if 
     end
 end
-figure;
-imshow(Inew);
-figure;
-imshow(In);
 disp('done');
 %%
 
