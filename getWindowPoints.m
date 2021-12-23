@@ -1,4 +1,4 @@
-function [Omega0, Omega1, Omega2, Omega3, Omega4] = getWindowPoints(I,i,j,N)
+function [Omega0,Omega1,Omega2,Omega3,Omega4,EWh,EWv] = getWindowPoints(I,Eh,Ev,i,j,N)
 % This function obtains the points in a window given the window parameter N
 % Parameters:
 %   I: Image
@@ -9,9 +9,13 @@ function [Omega0, Omega1, Omega2, Omega3, Omega4] = getWindowPoints(I,i,j,N)
 % Omega1, Omega2, Omega3, and Omega4 are the sets of points in a subwindow
 % Omega1, 2, 3, and 4 correspond to 1st, 2nd, 3rd, and 4th the quadrant of Omega0
 Omega0 = zeros(2*N+1, 2*N+1); % initialize
+EWh = zeros(2*N+1, 2*N+1);
+EWv = zeros(2*N+1, 2*N+1);
 for s=-N:N
     for t=-N:N
         Omega0(s+N+1,t+N+1) = I(i+s,j+t);
+        EWh(s+N+1,t+N+1) = Eh(i+s,j+t);
+        EWv(s+N+1,t+N+1) = Ev(i+s,j+t);
     end
 end
 % Define Omega1, Omega2, Omega3, and Omega4

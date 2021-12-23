@@ -55,10 +55,9 @@ for i=N+1:m-N-1
     for j=N+1:n-N-1
         % Omega0 is the set containing the pixels in the (2N+1)x(2N+1) window
         % OmegaK, K=1,2,3,4 are sets containing pixels in 4 sub windows
-        [Omega0,Omega1,Omega2,Omega3,Omega4,EWh,EWv]= getWindowPoints(In,Eh,Ev,i,j,N);   
+        [Omega0,Omega1,Omega2,Omega3,Omega4,Ed]= getWindowPoints(In,Eh,Ev,i,j,N);   
         [SQMV,SQMD_B,SQMD_C] = medianVector(Omega1,Omega2,Omega3,Omega4);
-        Edge = edgeDirection(EWh,EWv);
-        SQMR = referenceMedian(In,i,j,Edge,SQMV,SQMD_B,SQMD_C,p);
+        SQMR = referenceMedian(SQMV,SQMD_B,SQMD_C,p);
         [S1,S2] = noiseDetector(In(i,j),SQMR,Tk1,Tk2); 
         
 %         if i==3 && j==3

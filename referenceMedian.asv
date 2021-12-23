@@ -34,11 +34,8 @@ else
     
     dav = (x1+x2+x3+x4)/4;
     
-    if SQMD_C >= p && dav >= SQMV(3) && dav <= SQMV(4)
-        SQMR = SQMV(3);
-    else
-        SQMR = SQMV(2);
-    end
+    if 
+    
 end
     
 end

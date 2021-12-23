@@ -14,8 +14,10 @@ den = 0;
 
 for s=-N:N
     for t=-N:N
-        num = num + WG(i,j,s,t)*WSR(double(I(i+s,j+t)),double(Ic))*double(I(i+s,j+t));
-        den = den + WG(i,j,s,t)*WSR(double(I(i+s,j+t)),double(Ic));
+        if(t~=0 && s~=0)
+            num = num + WG(i,j,s,t)*WSR(double(I(i+s,j+t)),double(Ic))*double(I(i+s,j+t));
+            den = den + WG(i,j,s,t)*WSR(double(I(i+s,j+t)),double(Ic));
+        end
     end
 end
 
