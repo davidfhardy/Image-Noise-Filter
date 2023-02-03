@@ -20,7 +20,6 @@
 % The proposed solution is to define a switching bilateral filter (SBF)
 % which can detect both Gaussian and impulse noise and filter accordingly. 
 %% Data Sources
-% Write shit here
 %% Solutions
 % First we distribute noise over the image.
 I = imread('lena_image.png');
